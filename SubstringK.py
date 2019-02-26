@@ -11,7 +11,6 @@ position_start = 0
 string_input = input('DIGITE SUA PALAVRA: ')
 k_input = int(input('DIGITE VALOR K: '))
 
-
 # Contando a quantidade de letras diferentes.
 for letter in string_input:
     if letter not in unique_letters:
@@ -24,17 +23,17 @@ for combination in total_combinations:
     string = string_input
 
     for position_end, letter in enumerate(string):
-
         if letter not in combination:
             result.append(string[position_start:position_end])
             position_start = position_end + 1
             if result[-1] != '':
                 print(result[-1])
-
+                
+# Checar a maior substring
 if result == []:
     resultado = string
 else:
     resultado = max(result, key=len)
 
+# Mostrar resultado
 print(f'MAIOR STRING: {resultado}')
-
